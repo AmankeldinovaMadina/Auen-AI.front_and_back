@@ -5,3 +5,4 @@ fastapi
 uvicorn
 music21
 firebase_admin
+apache_beam
