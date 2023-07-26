@@ -4,4 +4,4 @@ basic_pitch
 fastapi
 uvicorn
 music21
-firebase_admi
+firebase_admin
