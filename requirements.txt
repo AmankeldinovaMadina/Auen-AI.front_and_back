@@ -1,0 +1,5 @@
+ddsp
+tensorflow
+basic_pitch
+fastapi
+uvicorn
