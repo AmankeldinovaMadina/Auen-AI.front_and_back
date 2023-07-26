@@ -3,3 +3,4 @@ tensorflow
 basic_pitch
 fastapi
 uvicorn
+music21
