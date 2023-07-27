@@ -28,19 +28,18 @@ struct Piano: View {
 struct ConvertedSoundsView: View {
     @State private var showView = false
     @Binding var currentStage: ViewStage
-    @ObservedObject var audioRecorderModel = AudioRecorderModel.shared
+    @EnvironmentObject var audioRecorderModel:AudioRecorderModel
     
     
     var body: some View {
         ZStack {
             Piano()
             VStack{
-                if let convertedFileURL = audioRecorderModel.convertedFileURL {
-                    ProgressExampleView(audioURL: convertedFileURL) 
+            
+                WavesView(audio: audioRecorderModel.convertedFileURL!)
                     
                     PDFShowView()
                     Spacer()
-                }
                 HStack {
                     VStack {
                         Button {

@@ -25,9 +25,10 @@
 		4F6AC7C82A6FDDD100358139 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7C72A6FDDD100358139 /* LoadingView.swift */; };
 		4F6AC7CA2A6FDE1C00358139 /* VoiceRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7C92A6FDE1C00358139 /* VoiceRecordingView.swift */; };
 		4F6AC7CC2A6FDE5500358139 /* PDFComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7CB2A6FDE5500358139 /* PDFComponent.swift */; };
-		4F6AC7CF2A72260C00358139 /* AudioWavesVisualize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7CE2A72260C00358139 /* AudioWavesVisualize.swift */; };
 		4F6AC7D22A72297000358139 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6AC7D12A72297000358139 /* DSWaveformImage */; };
 		4F6AC7D42A72297000358139 /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6AC7D32A72297000358139 /* DSWaveformImageViews */; };
+		4F6AC7F52A727E8800358139 /* AudioWavesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7F42A727E8800358139 /* AudioWavesView.swift */; };
+		4F6AC7F72A727EB900358139 /* AudioPlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7F62A727EB900358139 /* AudioPlayModel.swift */; };
 		4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */; };
 		4F70D8562A6E9B0D0062FE4B /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */; };
 		4F8E62342A4479EA00E21B63 /* auenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E62332A4479EA00E21B63 /* auenApp.swift */; };
@@ -64,7 +65,8 @@
 		4F6AC7C72A6FDDD100358139 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6AC7C92A6FDE1C00358139 /* VoiceRecordingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecordingView.swift; sourceTree = "<group>"; };
 		4F6AC7CB2A6FDE5500358139 /* PDFComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFComponent.swift; sourceTree = "<group>"; };
-		4F6AC7CE2A72260C00358139 /* AudioWavesVisualize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWavesVisualize.swift; sourceTree = "<group>"; };
+		4F6AC7F42A727E8800358139 /* AudioWavesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWavesView.swift; sourceTree = "<group>"; };
+		4F6AC7F62A727EB900358139 /* AudioPlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayModel.swift; sourceTree = "<group>"; };
 		4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		4F8E62302A4479EA00E21B63 /* auen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = auen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +188,8 @@
 		4F6AC7CD2A7225DC00358139 /* AudioWaves */ = {
 			isa = PBXGroup;
 			children = (
-				4F6AC7CE2A72260C00358139 /* AudioWavesVisualize.swift */,
+				4F6AC7F42A727E8800358139 /* AudioWavesView.swift */,
+				4F6AC7F62A727EB900358139 /* AudioPlayModel.swift */,
 			);
 			path = AudioWaves;
 			sourceTree = "<group>";
@@ -333,15 +336,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6AC7C12A6FDCFB00358139 /* ConvertedSoundsView.swift in Sources */,
+				4F6AC7F72A727EB900358139 /* AudioPlayModel.swift in Sources */,
 				4F4FDC912A49F5CC00ABCB52 /* AudioPlayerModel.swift in Sources */,
 				4F4FDCA92A4ADC6000ABCB52 /* RegistrationView.swift in Sources */,
 				4F8E62342A4479EA00E21B63 /* auenApp.swift in Sources */,
 				4F6AC7CC2A6FDE5500358139 /* PDFComponent.swift in Sources */,
 				4F4FDC8F2A49F51700ABCB52 /* AudioRecorderModel.swift in Sources */,
+				4F6AC7F52A727E8800358139 /* AudioWavesView.swift in Sources */,
 				4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */,
 				4F6AC7CA2A6FDE1C00358139 /* VoiceRecordingView.swift in Sources */,
 				4FD889742A54990D002325E0 /* UserModel.swift in Sources */,
-				4F6AC7CF2A72260C00358139 /* AudioWavesVisualize.swift in Sources */,
 				4F2F02BE2A459A8400DCDFD1 /* WelcomPageView.swift in Sources */,
 				4F02E3A92A55593B001D9A7A /* ProfileView.swift in Sources */,
 				4F4FDC982A49FB8100ABCB52 /* ExtensionDate.swift in Sources */,

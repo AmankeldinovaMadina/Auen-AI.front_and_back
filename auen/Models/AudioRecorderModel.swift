@@ -36,7 +36,7 @@ class AudioRecorderModel: NSObject, ObservableObject {
     
     @Published var recordings = [Recording]()
     @Published var isFileConverted = false 
-    @Published var convertedFileURL: URL?
+    @Published var convertedFileURL: String?
     @Published var convertedPDFURL: URL?
 
     
@@ -124,22 +124,23 @@ class AudioRecorderModel: NSObject, ObservableObject {
                 print("File converted successfully")
                 
                 if let data = data {
-                    do {
-                        let decoder = JSONDecoder()
-                        let convertedFile = try decoder.decode(ConvertedFile.self, from: data)
-                        print("ID: \(convertedFile.id)")
-                        print("URL: \(convertedFile.url)")
-                        print("PDF URL: \(convertedFile.pdf_url)")
-                        
-                        DispatchQueue.main.async {
-                            self.convertedFileURL = URL(string: convertedFile.url)
-                            self.convertedPDFURL = URL(string: convertedFile.pdf_url)
-                        }
-                    } catch {
-                        print("Error decoding JSON: \(error)")
-                    }
-                }
-                
+                              do {
+                                  let decoder = JSONDecoder()
+                                  let convertedFile = try decoder.decode(ConvertedFile.self, from: data)
+                                  print("ID: \(convertedFile.id)")
+                                  print("URL: \(convertedFile.url)")
+                                  print("PDF URL: \(convertedFile.pdf_url)")
+
+                                  DispatchQueue.main.async {
+                                      // Set the safe URL as a string in the convertedFileURL
+                                      self.convertedFileURL = convertedFile.url
+                                      self.convertedPDFURL = URL(string: convertedFile.pdf_url)
+                                      print("Converted File URL: \(self.convertedFileURL)")
+                                  }
+                              } catch {
+                                  print("Error decoding JSON: \(error)")
+                              }
+                          }
                 
                self.isFileConverted = true
     
