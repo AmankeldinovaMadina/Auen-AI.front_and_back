@@ -3,7 +3,7 @@ import Firebase
 @main
 struct auenApp: App {
     @StateObject var viewModel = AuthViewModel()
-
+    @StateObject var audioRecorder = AudioRecorderModel()
 
     init() {
         FirebaseApp.configure()
@@ -13,6 +13,7 @@ struct auenApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environmentObject(audioRecorder)
         }
     }
 }

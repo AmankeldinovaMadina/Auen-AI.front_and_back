@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct VoiceRecordingView: View {
-    @StateObject var audioRecorder = AudioRecorderModel()
+    @EnvironmentObject var audioRecorder:AudioRecorderModel
     @Binding var currentStage: ViewStage
   
     
@@ -14,7 +14,7 @@ struct VoiceRecordingView: View {
                     .offset(y:-460)
                 VStack{
                     RecordTextView()
-                    RecordButtonView(audioRecorder: audioRecorder, currentStage: $currentStage)
+                    RecordButtonView(audioRecorder: _audioRecorder, currentStage: $currentStage)
                         .padding(.top)
                 }
             }
@@ -40,7 +40,7 @@ struct RecordTextView: View {
 
 struct RecordButtonView: View {
     @Environment(\.colorScheme) var colorScheme
-    @StateObject var audioRecorder: AudioRecorderModel
+    @EnvironmentObject var audioRecorder:AudioRecorderModel
     @State private var isPressed = false
     @Binding var currentStage: ViewStage
    

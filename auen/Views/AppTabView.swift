@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AppTabView: View {
-    @StateObject var audioRecorder = AudioRecorderModel()
+    @EnvironmentObject var audioRecorder: AudioRecorderModel
     @EnvironmentObject var viewModel: AuthViewModel
     
     init() {

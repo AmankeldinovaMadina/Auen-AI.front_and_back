@@ -42,6 +42,7 @@ class AudioRecorderModel: NSObject, ObservableObject {
     
     func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
+        self.isFileConverted = false
         print(isFileConverted)
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)

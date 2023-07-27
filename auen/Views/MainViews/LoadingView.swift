@@ -5,7 +5,7 @@ struct MusicLoadingView: View {
     let noteSize: CGSize = CGSize(width: 20, height: 30)
     let noteSpacing: CGFloat = 10
 
-    @ObservedObject var audioRecorder = AudioRecorderModel()
+    @EnvironmentObject var audioRecorder: AudioRecorderModel
     @State private var isAnimating = false
     @State private var isFileConverted = false
 
