@@ -28,31 +28,35 @@ struct Piano: View {
 struct ConvertedSoundsView: View {
     @State private var showView = false
     @Binding var currentStage: ViewStage
-
+    @ObservedObject var audioRecorderModel = AudioRecorderModel.shared
+    
+    
     var body: some View {
         ZStack {
             Piano()
             VStack{
-               
-                PDFShowView()
-                Spacer()
-            }
-            HStack {
-                VStack {
-                    Button {
-                        currentStage = .voiceRecording
-                    } label: {
-                        GenerateAgainButton()
-                    }
+                if let convertedFileURL = audioRecorderModel.convertedFileURL {
+                    ProgressExampleView(audioURL: convertedFileURL) 
+                    
+                    PDFShowView()
                     Spacer()
                 }
-                Spacer()
-                
+                HStack {
+                    VStack {
+                        Button {
+                            currentStage = .voiceRecording
+                        } label: {
+                            GenerateAgainButton()
+                        }
+                        Spacer()
+                    }
+                    Spacer()
+                    
+                }
+                .padding(.trailing)
             }
-            .padding(.trailing)
+            
         }
-       
- 
             
     }
 }

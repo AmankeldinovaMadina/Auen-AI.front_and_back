@@ -11,6 +11,12 @@ struct Recording {
     let createdAt: Date
 }
 
+struct ConvertedFile: Codable{
+    let id: String
+    let url:String
+    let pdf_url: String
+}
+
 class AudioRecorderModel: NSObject, ObservableObject {
     static let shared = AudioRecorderModel()
     
@@ -116,6 +122,25 @@ class AudioRecorderModel: NSObject, ObservableObject {
             let statusCode = httpResponse.statusCode
             if statusCode == 200 {
                 print("File converted successfully")
+                
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let convertedFile = try decoder.decode(ConvertedFile.self, from: data)
+                        print("ID: \(convertedFile.id)")
+                        print("URL: \(convertedFile.url)")
+                        print("PDF URL: \(convertedFile.pdf_url)")
+                        
+                        DispatchQueue.main.async {
+                            self.convertedFileURL = URL(string: convertedFile.url)
+                            self.convertedPDFURL = URL(string: convertedFile.pdf_url)
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                }
+                
+                
                self.isFileConverted = true
     
                 isFileConvertedPublisher.send(true)
@@ -198,7 +223,9 @@ class AudioRecorderModel: NSObject, ObservableObject {
         
         recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
         
-        objectWillChange.send(self)
+        DispatchQueue.main.async {
+            self.objectWillChange.send(self)
+        }
     }
     
     func deleteRecording(urlsToDelete: [URL]) {

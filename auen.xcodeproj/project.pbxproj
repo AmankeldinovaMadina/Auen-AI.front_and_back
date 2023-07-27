@@ -16,7 +16,6 @@
 		4F4FDC962A49F99E00ABCB52 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4FDC952A49F99E00ABCB52 /* Combine.framework */; };
 		4F4FDC982A49FB8100ABCB52 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FDC972A49FB8100ABCB52 /* ExtensionDate.swift */; };
 		4F4FDC9E2A4A00CC00ABCB52 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FDC9D2A4A00CC00ABCB52 /* AppTabView.swift */; };
-		4F4FDCA12A4AA11B00ABCB52 /* ConvertedFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FDCA02A4AA11B00ABCB52 /* ConvertedFileModel.swift */; };
 		4F4FDCA92A4ADC6000ABCB52 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FDCA82A4ADC6000ABCB52 /* RegistrationView.swift */; };
 		4F4FDCAB2A4ADC6F00ABCB52 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FDCAA2A4ADC6F00ABCB52 /* AuthorizationView.swift */; };
 		4F6AC7BD2A6FDBFB00358139 /* ConvertingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7BC2A6FDBFB00358139 /* ConvertingView.swift */; };
@@ -26,6 +25,9 @@
 		4F6AC7C82A6FDDD100358139 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7C72A6FDDD100358139 /* LoadingView.swift */; };
 		4F6AC7CA2A6FDE1C00358139 /* VoiceRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7C92A6FDE1C00358139 /* VoiceRecordingView.swift */; };
 		4F6AC7CC2A6FDE5500358139 /* PDFComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7CB2A6FDE5500358139 /* PDFComponent.swift */; };
+		4F6AC7CF2A72260C00358139 /* AudioWavesVisualize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7CE2A72260C00358139 /* AudioWavesVisualize.swift */; };
+		4F6AC7D22A72297000358139 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6AC7D12A72297000358139 /* DSWaveformImage */; };
+		4F6AC7D42A72297000358139 /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6AC7D32A72297000358139 /* DSWaveformImageViews */; };
 		4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */; };
 		4F70D8562A6E9B0D0062FE4B /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */; };
 		4F8E62342A4479EA00E21B63 /* auenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E62332A4479EA00E21B63 /* auenApp.swift */; };
@@ -53,7 +55,6 @@
 		4F4FDC952A49F99E00ABCB52 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = System/Library/Frameworks/Combine.framework; sourceTree = SDKROOT; };
 		4F4FDC972A49FB8100ABCB52 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		4F4FDC9D2A4A00CC00ABCB52 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
-		4F4FDCA02A4AA11B00ABCB52 /* ConvertedFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedFileModel.swift; sourceTree = "<group>"; };
 		4F4FDCA82A4ADC6000ABCB52 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		4F4FDCAA2A4ADC6F00ABCB52 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		4F6AC7BC2A6FDBFB00358139 /* ConvertingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertingView.swift; path = "../../../../first version copy/auen/Views/MainViews/VoiceConverting/ConvertingView.swift"; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		4F6AC7C72A6FDDD100358139 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F6AC7C92A6FDE1C00358139 /* VoiceRecordingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecordingView.swift; sourceTree = "<group>"; };
 		4F6AC7CB2A6FDE5500358139 /* PDFComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFComponent.swift; sourceTree = "<group>"; };
+		4F6AC7CE2A72260C00358139 /* AudioWavesVisualize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWavesVisualize.swift; sourceTree = "<group>"; };
 		4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		4F8E62302A4479EA00E21B63 /* auen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = auen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,10 +82,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6AC7D42A72297000358139 /* DSWaveformImageViews in Frameworks */,
 				4F4FDC962A49F99E00ABCB52 /* Combine.framework in Frameworks */,
 				4FD889792A54A236002325E0 /* FirebaseAuth in Frameworks */,
 				4FD360542A6CEA47003DCB01 /* AudioKit in Frameworks */,
 				4FD8897B2A54A236002325E0 /* FirebaseDatabase in Frameworks */,
+				4F6AC7D22A72297000358139 /* DSWaveformImage in Frameworks */,
 				4F70D8562A6E9B0D0062FE4B /* PDFKit.framework in Frameworks */,
 				4FD8897D2A54A236002325E0 /* FirebaseFirestore in Frameworks */,
 				4FD889812A54A236002325E0 /* FirebaseStorage in Frameworks */,
@@ -137,6 +141,7 @@
 		4F2F02C02A45A4B800DCDFD1 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				4F6AC7CD2A7225DC00358139 /* AudioWaves */,
 				4F6AC7C22A6FDD4100358139 /* PDFHandling */,
 				4F6AC7C02A6FDCFB00358139 /* ConvertedSoundsView.swift */,
 				4F6AC7C72A6FDDD100358139 /* LoadingView.swift */,
@@ -152,7 +157,6 @@
 				4F4FDC8E2A49F51700ABCB52 /* AudioRecorderModel.swift */,
 				4F4FDC902A49F5CC00ABCB52 /* AudioPlayerModel.swift */,
 				4F4FDC972A49FB8100ABCB52 /* ExtensionDate.swift */,
-				4F4FDCA02A4AA11B00ABCB52 /* ConvertedFileModel.swift */,
 				4FD8896F2A549649002325E0 /* AuthModel.swift */,
 				4FD889732A54990D002325E0 /* UserModel.swift */,
 			);
@@ -177,6 +181,14 @@
 				4F6AC7C32A6FDD6200358139 /* PDFShowView.swift */,
 			);
 			path = PDFHandling;
+			sourceTree = "<group>";
+		};
+		4F6AC7CD2A7225DC00358139 /* AudioWaves */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AC7CE2A72260C00358139 /* AudioWavesVisualize.swift */,
+			);
+			path = AudioWaves;
 			sourceTree = "<group>";
 		};
 		4F6D852D2A5D5A170060F0A9 /* Extensions */ = {
@@ -257,6 +269,8 @@
 				4FD8897E2A54A236002325E0 /* FirebaseFirestoreSwift */,
 				4FD889802A54A236002325E0 /* FirebaseStorage */,
 				4FD360532A6CEA47003DCB01 /* AudioKit */,
+				4F6AC7D12A72297000358139 /* DSWaveformImage */,
+				4F6AC7D32A72297000358139 /* DSWaveformImageViews */,
 			);
 			productName = auen;
 			productReference = 4F8E62302A4479EA00E21B63 /* auen.app */;
@@ -289,6 +303,7 @@
 			packageReferences = (
 				4FD889772A54A236002325E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4FD360522A6CEA47003DCB01 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				4F6AC7D02A72297000358139 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
 			);
 			productRefGroup = 4F8E62312A4479EA00E21B63 /* Products */;
 			projectDirPath = "";
@@ -326,6 +341,7 @@
 				4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */,
 				4F6AC7CA2A6FDE1C00358139 /* VoiceRecordingView.swift in Sources */,
 				4FD889742A54990D002325E0 /* UserModel.swift in Sources */,
+				4F6AC7CF2A72260C00358139 /* AudioWavesVisualize.swift in Sources */,
 				4F2F02BE2A459A8400DCDFD1 /* WelcomPageView.swift in Sources */,
 				4F02E3A92A55593B001D9A7A /* ProfileView.swift in Sources */,
 				4F4FDC982A49FB8100ABCB52 /* ExtensionDate.swift in Sources */,
@@ -334,7 +350,6 @@
 				4F6AC7C42A6FDD6200358139 /* PDFShowView.swift in Sources */,
 				4F6AC7C82A6FDDD100358139 /* LoadingView.swift in Sources */,
 				4F6AC7C62A6FDD9A00358139 /* PDFPicker .swift in Sources */,
-				4F4FDCA12A4AA11B00ABCB52 /* ConvertedFileModel.swift in Sources */,
 				4F02E3A42A5529DC001D9A7A /* ContentView.swift in Sources */,
 				4FD889702A549649002325E0 /* AuthModel.swift in Sources */,
 				4F4FDCAB2A4ADC6F00ABCB52 /* AuthorizationView.swift in Sources */,
@@ -541,6 +556,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4F6AC7D02A72297000358139 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 		4FD360522A6CEA47003DCB01 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
@@ -560,6 +583,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4F6AC7D12A72297000358139 /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F6AC7D02A72297000358139 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+		4F6AC7D32A72297000358139 /* DSWaveformImageViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F6AC7D02A72297000358139 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImageViews;
+		};
 		4FD360532A6CEA47003DCB01 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4FD360522A6CEA47003DCB01 /* XCRemoteSwiftPackageReference "AudioKit" */;
