@@ -14,3 +14,4 @@ apache_beam
 requests
 mido
 pydantic
+librosa
