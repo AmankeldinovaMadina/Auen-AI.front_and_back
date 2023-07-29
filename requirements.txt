@@ -1,7 +1,6 @@
 ddsp
 llvmlite
 tensorflow==2.12
-protobuf==3.20
 basic_pitch
 fastapi
 uvicorn
