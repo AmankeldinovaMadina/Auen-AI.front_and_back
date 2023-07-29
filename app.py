@@ -23,7 +23,6 @@ from datetime import datetime
 
 
 
-
 cred = credentials.Certificate("serviceAccountKey.json")
 
 firebase_admin.initialize_app(cred, {"storageBucket": "auen-6d3a0.appspot.com"})
@@ -42,6 +41,32 @@ class ConvertedFilesResponse(BaseModel):
 
 def home():
     return HTMLResponse(content="<h1>Welcome to the Home Page</h1>", status_code=200)
+
+def delete_files_before_conversion():
+    try:
+       
+        static_path = "static"
+        files_path = "static/files"
+        converted_path = "static/files/converted"
+
+        for file_path in os.listdir(static_path):
+            file_path = os.path.join(static_path, file_path)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+
+        for file_path in os.listdir(files_path):
+            file_path = os.path.join(files_path, file_path)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+
+        for file_path in os.listdir(converted_path):
+            file_path = os.path.join(converted_path, file_path)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+
+        print("All files in static, static/files, and static/files/converted directories deleted.")
+    except Exception as e:
+        print(f"Error deleting files: {str(e)}")
 
 
 def convert_midi_to_pdf(midi_path: str) -> str:
@@ -70,6 +95,9 @@ def convert_midi_to_pdf(midi_path: str) -> str:
 
 @app.post("/convert", response_model=ConvertedFile)
 async def upload_file(request: UploadFile = File(...)):
+    
+    delete_files_before_conversion()
+
     contents = await request.read()
     filename = secure_filename(request.filename)
     file_path = os.path.join("static/files", filename)
