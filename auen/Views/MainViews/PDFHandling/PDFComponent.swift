@@ -3,14 +3,16 @@ import PDFKit
 
 struct PDFComponent: UIViewRepresentable {
     let url: URL?
-    let downloadButtonAction: () -> Void // Add download button action
+    let downloadButtonAction: () -> Void
 
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
 
         if let url = url {
             let pdfView = PDFView()
-            pdfView.document = PDFDocument(url: url)
+            DispatchQueue.main.async {
+                pdfView.document = PDFDocument(url: url)
+            }
             pdfView.autoScales = true
 
             let downloadButton = UIButton(type: .system)
@@ -45,7 +47,7 @@ struct PDFComponent: UIViewRepresentable {
         Coordinator(parent: self)
     }
 
-    // Coordinator to handle download button action
+
     class Coordinator: NSObject {
         let parent: PDFComponent
 

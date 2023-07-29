@@ -11,17 +11,19 @@ struct PDFShowView: View {
             Button {
                 isPickedPresented.toggle()
             } label: {
-                Text("Select your PDF")
+                ZStack{
+                    RoundedRectangle(cornerRadius: 12)
+                        .frame(height: 50)
+                        .foregroundColor(Color(red: 0.46, green: 0.46, blue: 0.5).opacity(0.12))
+                    Text("Show music notes")
+                        .foregroundColor(.pink)
+                } .padding(.horizontal)
             }
             .sheet(isPresented: $isPickedPresented) {
                 if documentURL != nil {
                     PDFComponent(url: documentURL) {
-                        // Download button action
                         if let url = documentURL {
-                            // Perform the download action here
                             print("Downloading PDF from URL: \(url)")
-
-                            // Call the function to handle the download completion
                             handleDownloadCompletion()
                         }
                     }
@@ -36,7 +38,7 @@ struct PDFShowView: View {
     }
 
     private func handleDownloadCompletion() {
-        showAlert = true // Show the alert when the file is downloaded
+        showAlert = true 
     }
 }
 

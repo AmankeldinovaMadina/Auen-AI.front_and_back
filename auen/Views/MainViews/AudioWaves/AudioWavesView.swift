@@ -7,7 +7,7 @@ struct WavesView: View {
     @StateObject private var audioVM: AudioPlayViewModel
     
     private func normalizeSoundLevel(level: Float) -> CGFloat {
-        let level = max(0.2, CGFloat(level) + 140) / 2 // between 0.1 and 35
+        let level = max(0.2, CGFloat(level) + 140) / 2
         return CGFloat(level * (40/35))
     }
     
@@ -17,20 +17,20 @@ struct WavesView: View {
     
     var body: some View {
         VStack {
-            // Place the audio wave visualization at the top and increase its size
+           
             HStack(alignment: .center, spacing: 7) {
                 if audioVM.soundSamples.isEmpty {
                     ProgressView()
                 } else {
                     ForEach(audioVM.soundSamples, id: \.self) { model in
                         BarView(value: self.normalizeSoundLevel(level: model.magnitude), color: model.color)
-                            .frame(height: 200) // Increase the height of the audio wave
+                            .frame(height: 200)
                     }
                 }
             }
-            .frame(maxWidth: .infinity) // Expand the audio wave to fill the width
+            .frame(maxWidth: .infinity)
             
-            // Place the button below the audio wave
+         
             Button {
                 if audioVM.isPlaying {
                     audioVM.pauseAudio()
@@ -39,26 +39,25 @@ struct WavesView: View {
                 }
             } label: {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 16)
-                        .foregroundColor(.pink)
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(LinearGradient(gradient: Gradient(colors: [.pink, .purple]), startPoint: .leading, endPoint: .trailing))
+                        .frame(width: 95, height: 54)
+                    
                     HStack {
                         Image(systemName: !(audioVM.isPlaying) ? "play.fill" : "pause.fill" )
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
-                            .foregroundColor(.black)
                         Text("Play")
-                            .foregroundColor(.white)
-                    }
+                    } .foregroundColor(.white)
                 }
             }
-            .padding(.vertical, 8)
             .padding(.horizontal)
             .frame(minHeight: 0, maxHeight: 50)
             
             
         }
-        .padding(.top) // Add some top padding to separate from the top safe area
+        .padding(.top)
     }
 }
 
@@ -66,12 +65,12 @@ struct WavesView: View {
 
 struct BarView: View {
     let value: CGFloat
-    var color: Color = .clear // Add a default color of clear
+    var color: Color = .clear
 
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(color) // Use the specified color
+                .fill(color) 
                 .frame(width: 4, height: value)
                 .cornerRadius(10)
                 .frame(width: 1, height: value)

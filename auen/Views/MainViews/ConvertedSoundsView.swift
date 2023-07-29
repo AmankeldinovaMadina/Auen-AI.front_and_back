@@ -1,29 +1,5 @@
 import SwiftUI
 
-struct Piano: View {
-    var body: some View{
-        VStack {
-            ZStack {
-                Capsule()
-                    .frame(width: 400, height: 600)
-                    .foregroundColor(.clear)
-                RadialGradient(
-                    gradient: Gradient(colors: [.customPurple, .white]),
-                    center: .center,
-                    startRadius: 0,
-                    endRadius: 380
-                )
-                .opacity(0.4)
-                .mask(Capsule())
-                Image("piano")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300, height: 350)
-                    .scaleEffect(x: -1, y: 1)
-            }
-        }
-    }
-}
 
 struct ConvertedSoundsView: View {
     @State private var showView = false
@@ -32,39 +8,48 @@ struct ConvertedSoundsView: View {
     
     
     var body: some View {
-        ZStack {
-            Piano()
-            VStack{
-            
-                WavesView(audio: audioRecorderModel.convertedFileURL!)
-                    
-                    PDFShowView()
-                    Spacer()
-                HStack {
-                    VStack {
-                        Button {
-                            currentStage = .voiceRecording
-                        } label: {
-                            GenerateAgainButton()
-                        }
-                        Spacer()
-                    }
-                    Spacer()
-                    
+        VStack {
+            HStack {
+                Button {
+                    currentStage = .voiceRecording
+                } label: {
+                    GenerateAgainButton()
                 }
-                .padding(.trailing)
+                Spacer()
             }
-            
+            HStack{
+                Text("Piano")
+                    .foregroundColor(.black)
+                    .font(.system(size: 34, weight: .bold))
+                    .padding(.all)
+                
+                Spacer()
+            }
+            Image("piano")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 165, height: 144)
+                .padding(.top)
+            WavesView(audio: audioRecorderModel.convertedFileURL!)
+                .padding(.top, 25)
+            Spacer()
+            PDFShowView()
+                .padding(.bottom)
         }
-            
+        
     }
+    
 }
 
 
 struct GenerateAgainButton: View {
     var body: some View {
-        Image(systemName: "chevron.backward")
-            .foregroundColor(Color.black)
-            .padding(.all, 16)
+        HStack{
+            Image(systemName: "chevron.backward")
+                .padding(.leading, 16)
+            Text("Recording")
+                .padding(.top, 8)
+                
+        }.foregroundColor(.pink)
     }
 }
