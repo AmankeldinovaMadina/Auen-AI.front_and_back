@@ -1,6 +1,6 @@
 ddsp
-llvmlite
-tensorflow==2.12
+llvmlite==0.40.1
+tensorflow==2.13.0
 basic_pitch
 fastapi
 uvicorn
