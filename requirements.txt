@@ -6,3 +6,6 @@ uvicorn
 music21
 firebase_admin
 apache_beam
+requests
+mido
+pydantic
