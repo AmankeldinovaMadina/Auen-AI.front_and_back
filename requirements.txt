@@ -1,5 +1,5 @@
 pip>=21.3.1
-ddsp
+ddsp==3.2.0
 tensorflow==2.13.0
 llvmlite==0.40.1
 numba==0.57.1
