@@ -19,6 +19,7 @@ from midi2note import midi_to_musicxml, run_command
 import requests
 from pathlib import Path
 from synthesize_midi_file import main as synthesize_midi
+from datetime import datetime
 
 # hello
 
@@ -45,18 +46,24 @@ def home():
 
 def convert_midi_to_pdf(midi_path: str) -> str:
     try:
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        pdf_filename = f"output_{timestamp}.pdf"
+
         midi_to_musicxml(midi_path, "output.xml")
         run_command("musicxml2ly output.xml")
         run_command("lilypond -o static/files/output output.ly")
 
-        pdf_blob_name = f"pdf/{os.path.basename('static/files/output.pdf')}"
+        pdf_blob_name = f"pdf/{os.path.basename(pdf_filename)}"
         pdf_blob = bucket.blob(pdf_blob_name)
         pdf_blob.upload_from_filename("static/files/output.pdf")
         print(f"PDF {pdf_blob_name} uploaded to Firebase Storage.")
 
         pdf_url = pdf_blob.public_url
+
+        os.remove("static/files/output.pdf")
         os.remove("output.xml")
         os.remove("output.ly")
+
         return pdf_url
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
