@@ -1,6 +1,7 @@
 pip
 ddsp==3.2.0
 tensorflow
+tensorflow-addons
 llvmlite
 note-seq
 protobuf
