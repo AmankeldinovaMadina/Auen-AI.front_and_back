@@ -1,5 +1,5 @@
 ddsp
-tensorflow
+tensorflow=2.12
 basic_pitch
 fastapi
 uvicorn
