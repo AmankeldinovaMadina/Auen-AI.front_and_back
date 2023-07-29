@@ -1,5 +1,4 @@
 ddsp
-llvmlite==0.40.1
 tensorflow==2.13.0
 basic_pitch
 fastapi
