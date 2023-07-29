@@ -1,11 +1,11 @@
-pip>=21.3.1
+pip
 ddsp==3.2.0
-tensorflow==2.13.0
-llvmlite==0.40.1
-note-seq==0.0.3
-protobuf>=3.20,<=3.20.99
+tensorflow
+llvmlite
+note-seq
+protobuf
 basic_pitch
-numba<0.50
+numba
 fastapi
 uvicorn
 music21
