@@ -2,6 +2,7 @@ ddsp
 tensorflow==2.13.0
 llvmlite==0.40.1
 numba==0.57.1
+note-seq==0.0.3
 basic_pitch
 fastapi
 uvicorn
