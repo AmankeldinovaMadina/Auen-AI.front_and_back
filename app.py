@@ -21,7 +21,7 @@ from pathlib import Path
 from synthesize_midi_file import main as synthesize_midi
 from datetime import datetime
 
-# hello
+
 
 
 cred = credentials.Certificate("serviceAccountKey.json")
