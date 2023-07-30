@@ -44,7 +44,6 @@ def home():
 
 def delete_files_before_conversion():
     try:
-       
         static_path = "static"
         files_path = "static/files"
         converted_path = "static/files/converted"
