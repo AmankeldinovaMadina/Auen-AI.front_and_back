@@ -6,11 +6,13 @@ import subprocess
 import shlex
 from music21 import *
 
+
 import firebase_admin
 from basic_pitch.inference import predict_and_save
 from fastapi import FastAPI, File, HTTPException, UploadFile, APIRouter
 from fastapi.responses import FileResponse, HTMLResponse
 from firebase_admin import credentials, storage
+from typing import List
 from pydantic import BaseModel
 from werkzeug.utils import secure_filename
 from fastapi.staticfiles import StaticFiles
@@ -36,8 +38,8 @@ class ConvertedFile(BaseModel):
     url: str
     pdf_url: str
 
-# class ConvertedFilesResponse(BaseModel):
-#     converted_files: list[ConvertedFile]
+class ConvertedFilesResponse(BaseModel):
+    converted_files: List[ConvertedFile]
 
 def home():
     return HTMLResponse(content="<h1>Welcome to the Home Page</h1>", status_code=200)
@@ -132,10 +134,12 @@ async def upload_file(request: UploadFile = File(...)):
     converted_file_path = converted_file_paths[0] 
 
     midi_path = Path(converted_file_path)
+    print(converted_file_path)
     output_audio_path = os.path.splitext(midi_path.name)[0] + ".wav"
+    print(output_audio_path)
 
     synthesize_command = [
-        "python3", "synthesize_midi_file.py",
+        "/venv/bin/python3", "synthesize_midi_file.py",
         "--midi_file", str(midi_path),
         "--out_file", output_audio_path,
     ]

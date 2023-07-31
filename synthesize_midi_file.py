@@ -7,7 +7,7 @@ from ddsp_piano.default_model import get_model, build_model
 from ddsp_piano.utils.io_utils import load_midi_as_conditioning
 
 # Cannot put too long audio sequences on the GPU memory
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 
 def process_args():

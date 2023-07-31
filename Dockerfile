@@ -11,7 +11,7 @@ FROM python:3.8.10-slim as final
 WORKDIR /app
 
 RUN apt update && \
-  apt-get install -y libsndfile-dev ffmpeg
+  apt-get install -y libsndfile-dev ffmpeg lilypond
 
 COPY --from=build-stage /venv /venv
 
