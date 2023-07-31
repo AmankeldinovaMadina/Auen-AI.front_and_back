@@ -11,10 +11,10 @@ FROM python:3.8.10-slim as final
 WORKDIR /app
 
 RUN apt update && \
-  apt-get install -y libsndfile-dev
+  apt-get install -y libsndfile-dev ffmpeg
 
 COPY --from=build-stage /venv /venv
 
 COPY . .
 
-CMD ["/venv/bin/uvicorn", "app:app"]
+CMD ["/venv/bin/uvicorn", "--host", "0.0.0.0", "--port 8000", "app:app"]

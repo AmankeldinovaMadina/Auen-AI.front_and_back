@@ -36,8 +36,8 @@ class ConvertedFile(BaseModel):
     url: str
     pdf_url: str
 
-class ConvertedFilesResponse(BaseModel):
-    converted_files: list[ConvertedFile]
+# class ConvertedFilesResponse(BaseModel):
+#     converted_files: list[ConvertedFile]
 
 def home():
     return HTMLResponse(content="<h1>Welcome to the Home Page</h1>", status_code=200)

@@ -5,4 +5,4 @@ services:
     restart: always
     image: "auen-backend:${VERSION}"
     ports:
-      - "80:8000"
+      - "989:8000"
