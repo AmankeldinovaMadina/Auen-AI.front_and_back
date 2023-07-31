@@ -15,19 +15,15 @@ jobs:
 
       - name: Build
         run: docker build -t auen-backend:${{ github.sha }} .
+
   deploy:
     runs-on: self-hosted
     needs: build
     env:
-      SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
       VERSION: ${{ github.sha }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Delete all containers
-        run: |
-          docker stop $(docker ps -aq) && docker rm $(docker ps -aq) || true
-
       - name: Run docker compose
-        run: docker compose run --name auen-backend -u 1002 -p 80:8000 -d -e SERVICE_ACCOUNT_KEY -e VERSION app
+        run: docker compose up -d
