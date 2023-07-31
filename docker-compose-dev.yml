@@ -8,3 +8,10 @@ services:
       - "8888:8000"
     volumes:
       - ".:/app"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

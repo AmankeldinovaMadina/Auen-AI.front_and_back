@@ -6,3 +6,10 @@ services:
     image: "auen-backend:${VERSION}"
     ports:
       - "989:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
