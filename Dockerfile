@@ -17,4 +17,4 @@ COPY --from=build-stage /venv /venv
 
 COPY . .
 
-CMD ["/venv/bin/uvicorn", "--host", "0.0.0.0", "--port 8000", "app:app"]
+CMD ["/venv/bin/uvicorn", "--host", "0.0.0.0", "--port", "8000", "app:app"]
