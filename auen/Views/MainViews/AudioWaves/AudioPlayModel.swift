@@ -1,5 +1,4 @@
 import SwiftUI
-import AVFoundation
 import AVKit
 
 struct AudioPreviewModel: Hashable {
@@ -104,7 +103,7 @@ class AudioPlayViewModel: ObservableObject {
             self.timer = Timer.scheduledTimer(withTimeInterval: time_interval, repeats: true, block: { (timer) in
                 if self.index < self.soundSamples.count {
                     withAnimation(Animation.linear) {
-                        self.soundSamples[self.index].color = .pink // Change the color to pink
+                        self.soundSamples[self.index].color = Color(red: 0.91, green: 0.11, blue: 0.45) // Change the color to pink
                     }
                     self.index += 1
                 }

@@ -29,6 +29,8 @@
 		4F6AC7D42A72297000358139 /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6AC7D32A72297000358139 /* DSWaveformImageViews */; };
 		4F6AC7F52A727E8800358139 /* AudioWavesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7F42A727E8800358139 /* AudioWavesView.swift */; };
 		4F6AC7F72A727EB900358139 /* AudioPlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7F62A727EB900358139 /* AudioPlayModel.swift */; };
+		4F6AC7FB2A750E7700358139 /* VoiceRecordingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC7FA2A750E7700358139 /* VoiceRecordingComponent.swift */; };
+		4F6AC8032A769A9900358139 /* ShareAudioView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AC8022A769A9900358139 /* ShareAudioView .swift */; };
 		4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */; };
 		4F70D8562A6E9B0D0062FE4B /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */; };
 		4F8E62342A4479EA00E21B63 /* auenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E62332A4479EA00E21B63 /* auenApp.swift */; };
@@ -67,6 +69,8 @@
 		4F6AC7CB2A6FDE5500358139 /* PDFComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFComponent.swift; sourceTree = "<group>"; };
 		4F6AC7F42A727E8800358139 /* AudioWavesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWavesView.swift; sourceTree = "<group>"; };
 		4F6AC7F62A727EB900358139 /* AudioPlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayModel.swift; sourceTree = "<group>"; };
+		4F6AC7FA2A750E7700358139 /* VoiceRecordingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordingComponent.swift; sourceTree = "<group>"; };
+		4F6AC8022A769A9900358139 /* ShareAudioView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareAudioView .swift"; sourceTree = "<group>"; };
 		4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		4F8E62302A4479EA00E21B63 /* auen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = auen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,11 +147,10 @@
 		4F2F02C02A45A4B800DCDFD1 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				4F6AC8012A769A1700358139 /* Converted */,
+				4F6AC8002A7699ED00358139 /* Recording */,
 				4F6AC7CD2A7225DC00358139 /* AudioWaves */,
-				4F6AC7C22A6FDD4100358139 /* PDFHandling */,
-				4F6AC7C02A6FDCFB00358139 /* ConvertedSoundsView.swift */,
 				4F6AC7C72A6FDDD100358139 /* LoadingView.swift */,
-				4F6AC7C92A6FDE1C00358139 /* VoiceRecordingView.swift */,
 				4F6AC7BC2A6FDBFB00358139 /* ConvertingView.swift */,
 			);
 			path = MainViews;
@@ -192,6 +195,25 @@
 				4F6AC7F62A727EB900358139 /* AudioPlayModel.swift */,
 			);
 			path = AudioWaves;
+			sourceTree = "<group>";
+		};
+		4F6AC8002A7699ED00358139 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AC7C92A6FDE1C00358139 /* VoiceRecordingView.swift */,
+				4F6AC7FA2A750E7700358139 /* VoiceRecordingComponent.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		4F6AC8012A769A1700358139 /* Converted */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AC7C22A6FDD4100358139 /* PDFHandling */,
+				4F6AC7C02A6FDCFB00358139 /* ConvertedSoundsView.swift */,
+				4F6AC8022A769A9900358139 /* ShareAudioView .swift */,
+			);
+			path = Converted;
 			sourceTree = "<group>";
 		};
 		4F6D852D2A5D5A170060F0A9 /* Extensions */ = {
@@ -354,9 +376,11 @@
 				4F6AC7C42A6FDD6200358139 /* PDFShowView.swift in Sources */,
 				4F6AC7C82A6FDDD100358139 /* LoadingView.swift in Sources */,
 				4F6AC7C62A6FDD9A00358139 /* PDFPicker .swift in Sources */,
+				4F6AC8032A769A9900358139 /* ShareAudioView .swift in Sources */,
 				4F02E3A42A5529DC001D9A7A /* ContentView.swift in Sources */,
 				4FD889702A549649002325E0 /* AuthModel.swift in Sources */,
 				4F4FDCAB2A4ADC6F00ABCB52 /* AuthorizationView.swift in Sources */,
+				4F6AC7FB2A750E7700358139 /* VoiceRecordingComponent.swift in Sources */,
 				4F4FDC9E2A4A00CC00ABCB52 /* AppTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,17 +507,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"auen/Preview Content\"";
+				DEVELOPMENT_TEAM = R8NC8LA377;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "give acces to record";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,9 +530,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = madina.amankeldinova.auen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -512,17 +544,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"auen/Preview Content\"";
+				DEVELOPMENT_TEAM = R8NC8LA377;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "give acces to record";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,9 +567,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = madina.amankeldinova.auen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

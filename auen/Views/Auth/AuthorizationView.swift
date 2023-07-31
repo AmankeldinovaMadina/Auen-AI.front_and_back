@@ -12,6 +12,10 @@ struct AuthorizationView: View {
     
     var body: some View {
         VStack {
+            Image("birdIconAuen")
+                 .resizable()
+                 .frame(width: 120, height: 120)
+                 .aspectRatio(contentMode: .fill)
             TextField("Username", text: $email)
                 .autocapitalization(.none)
                 .padding()

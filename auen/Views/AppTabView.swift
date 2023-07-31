@@ -18,7 +18,7 @@ struct AppTabView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
-        }
+        } .accentColor(Color(red: 0.91, green: 0.11, blue: 0.45))
     }
 }
 

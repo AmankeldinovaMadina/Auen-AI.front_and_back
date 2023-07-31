@@ -38,7 +38,7 @@ class AudioRecorderModel: NSObject, ObservableObject {
     @Published var isFileConverted = false 
     @Published var convertedFileURL: String?
     @Published var convertedPDFURL: URL?
-
+   
     
     var recording = false {
         didSet {
@@ -142,7 +142,7 @@ class AudioRecorderModel: NSObject, ObservableObject {
                               }
                           }
                 
-               self.isFileConverted = true
+                self.isFileConverted = true
     
                 isFileConvertedPublisher.send(true)
                 print("isFileConvertedPublisher sent: true")
@@ -156,8 +156,8 @@ class AudioRecorderModel: NSObject, ObservableObject {
                 print("Error: \(statusCode)")
             }
         }
-        task.resume()
         objectWillChange.send(self)
+        task.resume()
     }
     
 
@@ -178,8 +178,7 @@ class AudioRecorderModel: NSObject, ObservableObject {
             if statusCode == 200 {
                 if let data = data {
                     print("File downloaded successfully")
-                    // self.handleConversionResponse(data: data) // Handle the response
-                   
+                    
                     print(self.isFileConverted)
                 }
             } else {
@@ -188,6 +187,41 @@ class AudioRecorderModel: NSObject, ObservableObject {
         }
         task.resume()
     }
+    
+    
+    func shareAudio() {
+        guard let audioURL = URL(string: convertedFileURL!) else {
+            print("Audio URL is invalid.")
+            return
+        }
+        
+        let activityItems: [Any] = [audioURL]
+        
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        activityViewController.excludedActivityTypes = [
+            .postToWeibo,
+            .print,
+            .assignToContact,
+            .saveToCameraRoll,
+            .addToReadingList,
+            .postToFlickr,
+            .postToVimeo,
+            .postToTencentWeibo,
+            .postToFacebook
+        ]
+        
+        activityViewController.setValue("Share Audio", forKey: "subject")
+        
+        if let window = UIApplication.shared.windows.first,
+           let rootViewController = window.rootViewController {
+            rootViewController.present(activityViewController, animated: true, completion: nil)
+        }
+    }
+
+    
+    
+    
     
     func createFormDataBody(fileURL: URL, mimeType: String, boundary: String) -> Data {
         var body = Data()

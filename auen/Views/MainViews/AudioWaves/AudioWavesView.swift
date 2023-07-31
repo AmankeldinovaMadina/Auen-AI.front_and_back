@@ -12,7 +12,7 @@ struct WavesView: View {
     }
     
     init(audio: String) {
-        _audioVM = StateObject(wrappedValue: AudioPlayViewModel(url: URL(string: audio)!, sampels_count: Int(UIScreen.main.bounds.width * 0.6 / 5)))
+        _audioVM = StateObject(wrappedValue: AudioPlayViewModel(url: URL(string: audio)!, sampels_count: Int(UIScreen.main.bounds.width * 0.6 / 5.5)))
     }
     
     var body: some View {

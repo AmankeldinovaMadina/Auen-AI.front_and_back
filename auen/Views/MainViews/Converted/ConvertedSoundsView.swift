@@ -16,6 +16,8 @@ struct ConvertedSoundsView: View {
                     GenerateAgainButton()
                 }
                 Spacer()
+                ShareAudioView()
+                    .padding(.trailing)
             }
             HStack{
                 Text("Piano")
@@ -25,6 +27,7 @@ struct ConvertedSoundsView: View {
                 
                 Spacer()
             }
+            Divider()
             Image("piano")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -50,6 +53,6 @@ struct GenerateAgainButton: View {
             Text("Recording")
                 .padding(.top, 8)
                 
-        }.foregroundColor(.pink)
+        }.foregroundColor(Color(red: 0.91, green: 0.11, blue: 0.45))
     }
 }
