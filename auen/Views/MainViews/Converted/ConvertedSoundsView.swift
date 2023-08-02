@@ -51,10 +51,9 @@ struct GenerateAgainButton: View {
     var body: some View {
         HStack{
             Image(systemName: "chevron.backward")
-                .padding(.leading, 16)
             Text("Recording")
-                .padding(.top, 8)
-                
         }.foregroundColor(Color(red: 0.91, green: 0.11, blue: 0.45))
+            .padding(.top, 8)
+            .padding(.leading, 16)
     }
 }

@@ -8,6 +8,7 @@ struct AuthorizationView: View {
     @State private var isPasswordFocused = false
     @State private var showErrorMessage = false
     @State private var errorMessage = ""
+   
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -70,6 +71,9 @@ struct AuthorizationView: View {
             }
         }
         .padding()
+        .alert(isPresented: $showErrorMessage) {
+                    Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                }
     }
 }
 

@@ -6,7 +6,10 @@ struct RegistrationView: View {
     @State private var repeatedPassword = ""
     @State private var selectedField: Field = .none
     @State private var tabViewShowed = false
+    @State private var showErrorMessage = false
+    @State private var errorMessage = ""
     @EnvironmentObject var viewModel : AuthViewModel
+    
     enum Field {
         case username
         case password
@@ -69,17 +72,33 @@ struct RegistrationView: View {
            
             Button {
                 Task{
-                    try await viewModel.createUser(withEmail: email, password: password)
-                    tabViewShowed = true
+                    do{
+                        try await viewModel.createUser(withEmail: email, password: password)
+                        tabViewShowed = true
+                    } catch let error {
+                        showErrorMessage = true
+                        errorMessage = error.localizedDescription
+                    }
                 }
+                
+        
             } label: {
                 RegistrationSignUpButton()
                     .padding(.top)
             } .fullScreenCover(isPresented: $tabViewShowed) {
                 AppTabView()
             }
+            
+            if showErrorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding(.top)
+            }
         }
         .padding()
+        .alert(isPresented: $showErrorMessage) {
+                    Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                }
         
     }
 }

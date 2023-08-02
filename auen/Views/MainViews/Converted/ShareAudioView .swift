@@ -18,6 +18,7 @@ struct ShareAudioView: View {
         } label: {
                 Label("", systemImage: "ellipsis.circle")
                 .foregroundColor(.pink)
+                .font(.system(size: 24))
             }
     }
 }

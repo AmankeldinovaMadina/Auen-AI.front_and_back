@@ -27,6 +27,7 @@ class AuthViewModel: ObservableObject {
             self.userSession = result.user
         } catch {
             print("DEBUG: failed to log in with error \(error.localizedDescription)")
+            throw error
         }
     }
     
