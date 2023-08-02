@@ -33,11 +33,13 @@ struct ConvertedSoundsView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 165, height: 144)
                 .padding(.top)
+            
             WavesView(audio: audioRecorderModel.convertedFileURL!)
                 .padding(.top, 25)
-            Spacer()
+           
             PDFShowView()
-                .padding(.bottom)
+                .padding(.top, 25)
+            Spacer()
         }
         
     }

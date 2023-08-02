@@ -84,32 +84,27 @@ struct RecordTextView: View {
 
 
 
-
 struct RecordButtonView: View {
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var audioRecorder:AudioRecorderModel
-    @Binding  var isPressed: Bool
+    @EnvironmentObject var audioRecorder: AudioRecorderModel
+    @Binding var isPressed: Bool
     @Binding var currentStage: ViewStage
     
     var body: some View {
-        let longPressGesture = LongPressGesture(minimumDuration: 0.5)
-            .onChanged { _ in
+        let tapGesture = TapGesture(count: 1)
+            .onEnded {
+                if audioRecorder.recording {
+                    audioRecorder.stopRecording()
+                    currentStage = .loading
+                } else {
+                    audioRecorder.startRecording()
+                }
+                // Toggle isPressed here, which will animate the button when recording.
                 withAnimation(Animation.easeInOut(duration: 1.0).repeatForever()) {
                     isPressed.toggle()
                 }
-                
-                audioRecorder.startRecording()
             }
-            .onEnded { _ in
-                withAnimation(.easeInOut) {
-                    
-                }
-                
-                audioRecorder.stopRecording()
-                currentStage = .loading
-                
-            }
-        
+
         return ZStack {
             Image("music_key")
                 .resizable()
@@ -140,6 +135,6 @@ struct RecordButtonView: View {
                 .frame(width: 180, height: 180)
             
         }
-        .gesture(longPressGesture)
+        .gesture(tapGesture)
     }
 }

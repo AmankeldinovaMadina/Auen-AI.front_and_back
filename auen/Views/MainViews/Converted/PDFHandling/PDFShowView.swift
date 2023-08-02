@@ -1,9 +1,10 @@
 import SwiftUI
 import PDFKit
+import UIKit
 
 struct PDFShowView: View {
+    @EnvironmentObject private var audioRecorder: AudioRecorderModel
     @State private var isPickedPresented = false
-    @State private var documentURL: URL? = URL(string: "https://storage.googleapis.com/auen-6d3a0.appspot.com/pdf/output.pdf")
     @State private var showAlert = false
 
     var body: some View {
@@ -11,7 +12,7 @@ struct PDFShowView: View {
             Button {
                 isPickedPresented.toggle()
             } label: {
-                ZStack{
+                ZStack {
                     RoundedRectangle(cornerRadius: 12)
                         .frame(height: 50)
                         .foregroundColor(Color(red: 0.46, green: 0.46, blue: 0.5).opacity(0.12))
@@ -20,15 +21,16 @@ struct PDFShowView: View {
                 } .padding(.horizontal)
             }
             .sheet(isPresented: $isPickedPresented) {
-                if documentURL != nil {
-                    PDFComponent(url: documentURL) {
-                        if let url = documentURL {
+                if audioRecorder.convertedPDFURL != nil {
+                    PDFComponent(url: audioRecorder.convertedPDFURL) {
+                        if let url = audioRecorder.convertedPDFURL {
                             print("Downloading PDF from URL: \(url)")
                             handleDownloadCompletion()
+                            downloadPDF(from: audioRecorder.convertedPDFURL!)
                         }
                     }
                 } else {
-                    PDFPicker(url: $documentURL)
+                    PDFPicker(url: $audioRecorder.convertedPDFURL)
                 }
             }
         }
@@ -38,29 +40,48 @@ struct PDFShowView: View {
     }
 
     private func handleDownloadCompletion() {
-        showAlert = true 
+        showAlert = true
+    }
+    
+    private func downloadPDF(from url: URL) {
+        let documentController = UIDocumentInteractionController(url: url)
+        documentController.delegate = PDFShowViewDocumentDelegate()
+        documentController.presentPreview(animated: true)
     }
 }
+
+// MARK: - UIViewControllerRepresentable
+struct PDFShowViewWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        UIViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        // No need to do anything here
+    }
+}
+
+
+class PDFShowViewDocumentDelegate: NSObject, UIDocumentInteractionControllerDelegate {
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return UIApplication.shared.windows.first!.rootViewController!
+    }
+}
+
 
 struct ShowPDFButton: View {
     var body: some View {
-        HStack{
+        HStack {
             Spacer()
-            HStack{
+            HStack {
                 Spacer()
-                Group{
+                Group {
                     Image(systemName: "doc.on.doc")
                     Text("notes")
                         .padding(.trailing)
-                } .foregroundColor(.customPurple )
+                } .foregroundColor(.customPurple)
                 
             }
         }
-    }
-}
-
-struct PDFShowView_Previews: PreviewProvider {
-    static var previews: some View {
-        PDFShowView()
     }
 }

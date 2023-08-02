@@ -57,7 +57,6 @@ struct WavesView: View {
             
             
         }
-        .padding(.top)
     }
 }
 
