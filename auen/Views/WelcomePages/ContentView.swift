@@ -1,18 +1,18 @@
+
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @State var converting = false
     @EnvironmentObject var audioRecorder: AudioRecorderModel
     
     var body: some View{
-        Group{
-            if viewModel.userSession != nil {
-                AppTabView()
+       
+            
+            if converting {
+                ConvertingView()
             } else {
-               WelcomPageView()
+                WelcomPageView(converting: $converting)
             }
-        }
+        
     }
 }
-
-

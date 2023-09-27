@@ -88,7 +88,7 @@ class AudioRecorderModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
 
             let mimeType = "audio/mp3"
 
-            guard let url = URL(string: "http://158.160.3.158:8000/convert") else {
+            guard let url = URL(string: "http://84.201.161.209:8000/convert") else {
                 print("Invalid URL")
                 return
             }
@@ -100,7 +100,12 @@ class AudioRecorderModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
             let contentType = "multipart/form-data; boundary=\(boundary)"
             request.setValue(contentType, forHTTPHeaderField: "Content-Type")
 
-            let session = URLSession.shared
+            let sessionConfig = URLSessionConfiguration.default
+            let timeoutInterval: TimeInterval = 300 // Adjust the timeout value as needed
+            sessionConfig.timeoutIntervalForResource = timeoutInterval
+            sessionConfig.timeoutIntervalForRequest = timeoutInterval
+
+            let session = URLSession(configuration: sessionConfig)
 
             let formDataBody = createFormDataBody(fileURL: fileURL, mimeType: mimeType, boundary: boundary)
             request.httpBody = formDataBody
@@ -155,6 +160,7 @@ class AudioRecorderModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
             task.resume()
         }
     }
+
 
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {

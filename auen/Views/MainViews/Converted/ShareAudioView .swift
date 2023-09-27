@@ -11,9 +11,6 @@ struct ShareAudioView: View {
             Button("Share Audio") {
                 audioRecorderModel.shareAudio()
             }
-            Button("Download audio") {
-                audioRecorderModel.shareAudio()
-            }
 
         } label: {
                 Label("", systemImage: "ellipsis.circle")

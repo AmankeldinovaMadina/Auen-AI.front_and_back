@@ -10,20 +10,18 @@ struct PDFComponent: UIViewRepresentable {
 
         if let url = url {
             let pdfView = PDFView()
-            DispatchQueue.main.async {
-                pdfView.document = PDFDocument(url: url)
-            }
+            
+            pdfView.document = PDFDocument(url: url)
+            
             pdfView.autoScales = true
 
-            let downloadButton = UIButton(type: .system)
-            downloadButton.setTitle("Download PDF", for: .normal)
-            downloadButton.addTarget(context.coordinator, action: #selector(Coordinator.downloadButtonTapped), for: .touchUpInside)
-
+//            let downloadButton = UIButton(type: .system)
+           
             containerView.addSubview(pdfView)
-            containerView.addSubview(downloadButton)
+//            containerView.addSubview(downloadButton)
 
             pdfView.translatesAutoresizingMaskIntoConstraints = false
-            downloadButton.translatesAutoresizingMaskIntoConstraints = false
+//            downloadButton.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
                 pdfView.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -31,8 +29,8 @@ struct PDFComponent: UIViewRepresentable {
                 pdfView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
                 pdfView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 
-                downloadButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-                downloadButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20) // Adjust bottom margin as needed
+//                downloadButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+//                downloadButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20) // Adjust bottom margin as needed
             ])
         }
 
@@ -60,3 +58,18 @@ struct PDFComponent: UIViewRepresentable {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

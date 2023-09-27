@@ -34,12 +34,13 @@
 		4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D852E2A5D5A2B0060F0A9 /* ColorExtension.swift */; };
 		4F70D8562A6E9B0D0062FE4B /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */; };
 		4F8E62342A4479EA00E21B63 /* auenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E62332A4479EA00E21B63 /* auenApp.swift */; };
-		4F8E62382A4479EB00E21B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E62372A4479EB00E21B63 /* Assets.xcassets */; };
 		4F8E623B2A4479EB00E21B63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E623A2A4479EB00E21B63 /* Preview Assets.xcassets */; };
+		4FADCD7B2A7E428B00D19F13 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FADCD7A2A7E428B00D19F13 /* OnboardingMainView.swift */; };
+		4FADCD7D2A7E480300D19F13 /* Assets.xcassets 15-02-12-872.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FADCD7C2A7E480300D19F13 /* Assets.xcassets 15-02-12-872.xcassets */; };
+		4FADCD832A7E55CE00D19F13 /* OnBoardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FADCD822A7E55CE00D19F13 /* OnBoardingManager.swift */; };
+		4FADCD852A7E57A500D19F13 /* CustoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FADCD842A7E57A500D19F13 /* CustoomButton.swift */; };
 		4FD360542A6CEA47003DCB01 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4FD360532A6CEA47003DCB01 /* AudioKit */; };
 		4FD3605C2A6CFEF9003DCB01 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3605B2A6CFEF9003DCB01 /* OnboardingView.swift */; };
-		4FD889702A549649002325E0 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8896F2A549649002325E0 /* AuthModel.swift */; };
-		4FD889742A54990D002325E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD889732A54990D002325E0 /* UserModel.swift */; };
 		4FD889762A54A0C6002325E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD889752A54A0C6002325E0 /* GoogleService-Info.plist */; };
 		4FD889792A54A236002325E0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4FD889782A54A236002325E0 /* FirebaseAuth */; };
 		4FD8897B2A54A236002325E0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4FD8897A2A54A236002325E0 /* FirebaseDatabase */; };
@@ -75,11 +76,12 @@
 		4F70D8552A6E9B0D0062FE4B /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		4F8E62302A4479EA00E21B63 /* auen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = auen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8E62332A4479EA00E21B63 /* auenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auenApp.swift; sourceTree = "<group>"; };
-		4F8E62372A4479EB00E21B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F8E623A2A4479EB00E21B63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4FADCD7A2A7E428B00D19F13 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
+		4FADCD7C2A7E480300D19F13 /* Assets.xcassets 15-02-12-872.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets 15-02-12-872.xcassets"; sourceTree = "<group>"; };
+		4FADCD822A7E55CE00D19F13 /* OnBoardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingManager.swift; sourceTree = "<group>"; };
+		4FADCD842A7E57A500D19F13 /* CustoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustoomButton.swift; sourceTree = "<group>"; };
 		4FD3605B2A6CFEF9003DCB01 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		4FD8896F2A549649002325E0 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
-		4FD889732A54990D002325E0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4FD889752A54A0C6002325E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,8 +164,7 @@
 				4F4FDC8E2A49F51700ABCB52 /* AudioRecorderModel.swift */,
 				4F4FDC902A49F5CC00ABCB52 /* AudioPlayerModel.swift */,
 				4F4FDC972A49FB8100ABCB52 /* ExtensionDate.swift */,
-				4FD8896F2A549649002325E0 /* AuthModel.swift */,
-				4FD889732A54990D002325E0 /* UserModel.swift */,
+				4FADCD822A7E55CE00D19F13 /* OnBoardingManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,7 +249,7 @@
 				4F4FDC8D2A49E4AC00ABCB52 /* Models */,
 				4F2F02BB2A459A6100DCDFD1 /* Views */,
 				4F8E62332A4479EA00E21B63 /* auenApp.swift */,
-				4F8E62372A4479EB00E21B63 /* Assets.xcassets */,
+				4FADCD7C2A7E480300D19F13 /* Assets.xcassets 15-02-12-872.xcassets */,
 				4FD889752A54A0C6002325E0 /* GoogleService-Info.plist */,
 				4F8E62392A4479EB00E21B63 /* Preview Content */,
 			);
@@ -267,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				4FD3605B2A6CFEF9003DCB01 /* OnboardingView.swift */,
+				4FADCD7A2A7E428B00D19F13 /* OnboardingMainView.swift */,
+				4FADCD842A7E57A500D19F13 /* CustoomButton.swift */,
 			);
 			path = Onboardings;
 			sourceTree = "<group>";
@@ -345,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8E623B2A4479EB00E21B63 /* Preview Assets.xcassets in Resources */,
-				4F8E62382A4479EB00E21B63 /* Assets.xcassets in Resources */,
+				4FADCD7D2A7E480300D19F13 /* Assets.xcassets 15-02-12-872.xcassets in Resources */,
 				4FD889762A54A0C6002325E0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,9 +368,10 @@
 				4F6AC7CC2A6FDE5500358139 /* PDFComponent.swift in Sources */,
 				4F4FDC8F2A49F51700ABCB52 /* AudioRecorderModel.swift in Sources */,
 				4F6AC7F52A727E8800358139 /* AudioWavesView.swift in Sources */,
+				4FADCD852A7E57A500D19F13 /* CustoomButton.swift in Sources */,
 				4F6D852F2A5D5A2B0060F0A9 /* ColorExtension.swift in Sources */,
+				4FADCD832A7E55CE00D19F13 /* OnBoardingManager.swift in Sources */,
 				4F6AC7CA2A6FDE1C00358139 /* VoiceRecordingView.swift in Sources */,
-				4FD889742A54990D002325E0 /* UserModel.swift in Sources */,
 				4F2F02BE2A459A8400DCDFD1 /* WelcomPageView.swift in Sources */,
 				4F02E3A92A55593B001D9A7A /* ProfileView.swift in Sources */,
 				4F4FDC982A49FB8100ABCB52 /* ExtensionDate.swift in Sources */,
@@ -378,9 +382,9 @@
 				4F6AC7C62A6FDD9A00358139 /* PDFPicker .swift in Sources */,
 				4F6AC8032A769A9900358139 /* ShareAudioView .swift in Sources */,
 				4F02E3A42A5529DC001D9A7A /* ContentView.swift in Sources */,
-				4FD889702A549649002325E0 /* AuthModel.swift in Sources */,
 				4F4FDCAB2A4ADC6F00ABCB52 /* AuthorizationView.swift in Sources */,
 				4F6AC7FB2A750E7700358139 /* VoiceRecordingComponent.swift in Sources */,
+				4FADCD7B2A7E428B00D19F13 /* OnboardingMainView.swift in Sources */,
 				4F4FDC9E2A4A00CC00ABCB52 /* AppTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,24 +515,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"auen/Preview Content\"";
-				DEVELOPMENT_TEAM = R8NC8LA377;
+				DEVELOPMENT_TEAM = UD7GN29598;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Auen-AI";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "give acces to record";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow access to record audio for real-time conversion to piano sound without collecting your recordings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = madina.amankeldinova.auen;
+				PRODUCT_BUNDLE_IDENTIFIER = "madina.amankeldinova.auen-ai";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -548,24 +554,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"auen/Preview Content\"";
-				DEVELOPMENT_TEAM = R8NC8LA377;
+				DEVELOPMENT_TEAM = UD7GN29598;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Auen-AI";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "give acces to record";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow access to record audio for real-time conversion to piano sound without collecting your recordings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = madina.amankeldinova.auen;
+				PRODUCT_BUNDLE_IDENTIFIER = "madina.amankeldinova.auen-ai";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

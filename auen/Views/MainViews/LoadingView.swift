@@ -28,7 +28,12 @@ struct MusicLoadingView: View {
                             
                     }
                 }
-               
+               Text("This could take a while, \n around 1-2 min")
+                    .foregroundColor(.black)
+                    .font(.system(size: 12, weight: .thin))
+                    .multilineTextAlignment(.center)
+                    .padding(.top)
+                
             }
                 .padding()
             }

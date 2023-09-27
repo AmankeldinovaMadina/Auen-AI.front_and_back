@@ -4,6 +4,8 @@ struct VoiceRecordingView: View {
     @EnvironmentObject var audioRecorder:AudioRecorderModel
     @Binding var currentStage: ViewStage
     @State  var isPressed = false
+   
+    
     var body: some View {
         VStack{
             ZStack{
@@ -25,7 +27,7 @@ struct VoiceRecordingView: View {
                         VStack{
                             Spacer()
                             RecordingVisualizing()
-                                .padding(.bottom, 24)
+                                .padding(.bottom, 30)
                         }
                         
                     } else {
@@ -89,6 +91,7 @@ struct RecordButtonView: View {
     @EnvironmentObject var audioRecorder: AudioRecorderModel
     @Binding var isPressed: Bool
     @Binding var currentStage: ViewStage
+
     
     var body: some View {
         let tapGesture = TapGesture(count: 1)
@@ -97,12 +100,14 @@ struct RecordButtonView: View {
                     audioRecorder.stopRecording()
                     currentStage = .loading
                 } else {
+                   
                     audioRecorder.startRecording()
                 }
                 // Toggle isPressed here, which will animate the button when recording.
                 withAnimation(Animation.easeInOut(duration: 1.0).repeatForever()) {
                     isPressed.toggle()
                 }
+               
             }
 
         return ZStack {

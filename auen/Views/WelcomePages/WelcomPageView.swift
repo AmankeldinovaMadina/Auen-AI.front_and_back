@@ -1,50 +1,77 @@
 import SwiftUI
 
 struct WelcomPageView: View {
-    @State var registration = false
-    @State var authorization = false
+//    @State var registration = false
+//    @State var authorization = false
+    @Binding var converting: Bool
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Image("music_notes")
-                    .resizable()
-                    .frame(width: 923, height: 500)
-                    .ignoresSafeArea()
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-                WelcomeTextView()
-                NavigationLink(destination: RegistrationView()) {
-                    SignUpButtonView()
-                        .padding(.top, 23)
+//        NavigationView {
+            ZStack{
+                VStack{
+                    Image("notes")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .ignoresSafeArea()
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true)
+                    Spacer()
                 }
-                NavigationLink(destination: AuthorizationView()) {
-                    HaveAccButtonView()
-                        .padding(.top)
+                VStack {
+                    Spacer()
+                    WelcomeTextView()
+                    Button {
+                        converting = true
+                    } label: {
+                        StartButton()
+                    }
+
+//                    NavigationLink(destination: AuthorizationView()) {
+//                        HaveAccButtonView()
+//                            .padding(.top)
+//                            .padding(.bottom)
+//                    }
+                   
                 }
-                Spacer()
+                .padding(.horizontal, 16)
+                .padding(.bottom, 24)
             }
-            .padding(.horizontal, 16)
-        }
-        .accentColor(.black)
-        .navigationViewStyle(StackNavigationViewStyle())
+//        }
+//        .accentColor(.black)
+//        .navigationViewStyle(StackNavigationViewStyle())
+            .fullScreenCover(isPresented: $converting){
+                ConvertingView()
+            }
         
     }
 }
 
-
-
-struct SignUpButtonView: View {
+struct StartButton: View {
     var body: some View {
             ZStack{
                 Capsule()
                     .frame(height: 54)
                     .foregroundColor(Color.black)
-                Text("Sign Up")
+                Text("Start")
                     .foregroundColor(Color.white)
                     .font(.system(size: 17, weight: .semibold))
             }
     }
 }
+
+
+//struct SignUpButtonView: View {
+//    var body: some View {
+//            ZStack{
+//                Capsule()
+//                    .frame(height: 54)
+//                    .foregroundColor(Color.black)
+//                Text("Sign Up")
+//                    .foregroundColor(Color.white)
+//                    .font(.system(size: 17, weight: .semibold))
+//            }
+//    }
+//}
 
 struct WelcomeTextView: View{
     var body: some View{
@@ -57,17 +84,11 @@ struct WelcomeTextView: View{
     }
 }
 
-struct HaveAccButtonView: View {
-    var body: some View{
-            Text("I already have an account")
-                .foregroundColor(Color.black)
-                .font(.system(size: 17, weight: .semibold))
-    }
-}
-
-struct WelcomPage_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomPageView()
-    }
-}
-
+//struct HaveAccButtonView: View {
+//    var body: some View{
+//            Text("I already have an account")
+//                .foregroundColor(Color.black)
+//                .font(.system(size: 17, weight: .semibold))
+//    }
+//}
+//

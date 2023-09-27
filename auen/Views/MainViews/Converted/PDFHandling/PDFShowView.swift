@@ -26,8 +26,7 @@ struct PDFShowView: View {
                         if let url = audioRecorder.convertedPDFURL {
                             print("Downloading PDF from URL: \(url)")
                             handleDownloadCompletion()
-                            downloadPDF(from: audioRecorder.convertedPDFURL!)
-                        }
+                                                    }
                     }
                 } else {
                     PDFPicker(url: $audioRecorder.convertedPDFURL)
@@ -43,11 +42,6 @@ struct PDFShowView: View {
         showAlert = true
     }
     
-    private func downloadPDF(from url: URL) {
-        let documentController = UIDocumentInteractionController(url: url)
-        documentController.delegate = PDFShowViewDocumentDelegate()
-        documentController.presentPreview(animated: true)
-    }
 }
 
 // MARK: - UIViewControllerRepresentable

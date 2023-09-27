@@ -2,7 +2,7 @@ import SwiftUI
 import Firebase
 @main
 struct auenApp: App {
-    @StateObject var viewModel = AuthViewModel()
+//    @StateObject var viewModel = AuthViewModel()
     @StateObject var audioRecorder = AudioRecorderModel()
 
     init() {
@@ -11,9 +11,14 @@ struct auenApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(viewModel)
-                .environmentObject(audioRecorder)
+//            if !OnboardingManager.isOnboardingCompleted {
+//                OnboardingsController()
+//                    .environmentObject(audioRecorder)
+//            } else{
+                ContentView()
+                //                .environmentObject(viewModel)
+                    .environmentObject(audioRecorder)
+//            }
         }
     }
 }

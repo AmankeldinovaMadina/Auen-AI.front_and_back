@@ -2,9 +2,10 @@ import SwiftUI
 
 
 struct ConvertedSoundsView: View {
+    @EnvironmentObject var audioRecorder:AudioRecorderModel
+
     @State private var showView = false
     @Binding var currentStage: ViewStage
-    @EnvironmentObject var audioRecorderModel:AudioRecorderModel
     
     
     var body: some View {
@@ -34,7 +35,7 @@ struct ConvertedSoundsView: View {
                 .frame(width: 165, height: 144)
                 .padding(.top)
             
-            WavesView(audio: audioRecorderModel.convertedFileURL!)
+            WavesView(audio: audioRecorder.convertedFileURL!)
                 .padding(.top, 25)
            
             PDFShowView()
